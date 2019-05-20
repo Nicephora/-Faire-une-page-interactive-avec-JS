@@ -78,3 +78,13 @@ for (let i = 0; i < cards.length; i++) {
     }
   });
 }
+
+// Fonctionnalité 7 :Allez on va rajouter un peu de WTF dans la page : si un utilisateur clique sur le bouton gris ==>, la dernière card (en bas à droite) va passer en premier (en haut à gauche). On va pouvoir faire tourner les cards !
+
+let cardToMove = document.getElementsByClassName('col-md-4');
+let row = document.getElementsByClassName('row')[1];
+let greyArrow = document.getElementsByClassName('btn-secondary')[0];
+
+greyArrow.addEventListener('click', function() {
+  row.insertBefore(cardToMove[cardToMove.length-1], cardToMove[0]);
+});
